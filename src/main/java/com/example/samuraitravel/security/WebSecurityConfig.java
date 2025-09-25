@@ -18,7 +18,7 @@ public class WebSecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		http
 		.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/css/**","/images/**","/js/**","/storage/**","/").permitAll()
+				.requestMatchers("/css/**","/images/**","/js/**","/storage/**","/","/signup/**").permitAll()
 				.anyRequest().authenticated()  // 上記以外のURLはログインが必要（会員または管理者のどちらでもOK）
 				)
 		.formLogin((form) -> form   
