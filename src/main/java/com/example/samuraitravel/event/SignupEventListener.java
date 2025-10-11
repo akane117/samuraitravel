@@ -13,7 +13,7 @@ import com.example.samuraitravel.service.VerificationTokenService;
 @Component
 public class SignupEventListener {
     private final VerificationTokenService verificationTokenService;
-    private final JavaMailsSender javaMailSender;
+    private final JavaMailSender javaMailSender;
 
     public SignupEventListener(VerificationTokenService verificationTokenService, JavaMailSender mailSender) {
         this.verificationTokenService = verificationTokenService;
