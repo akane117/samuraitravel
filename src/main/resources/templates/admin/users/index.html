@@ -48,7 +48,7 @@
                                        <td th:text="${user.name}"></td>
                                        <td th:text="${user.furigana}"></td>
                                        <td th:text="${user.email}"></td>
-                                       <td><a href="@{/admin/users/__${user.id}__}">詳細</a></td>
+                                       <td><a th:href="@{/admin/users/__${user.id}__}">詳細</a></td>
                                    </tr>
                                </tbody>
                            </table>

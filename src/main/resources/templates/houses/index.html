@@ -143,6 +143,11 @@
                       </div>
 
                       <div class="col">
+						  
+						   <div th:if="${errorMessage}" class="alert alert-danger">
+                                <span th:text="${errorMessage}"></span>
+                            </div>  
+                            
                           <div class="d-flex justify-content-between flex-wrap">
                               <p th:if="${housePage.getTotalPages() > 1}" class="fs-5 mb-3" th:text="${'検索結果：' + housePage.getTotalElements() + '件' + '（' + (housePage.getNumber() + 1) + ' / ' + housePage.getTotalPages() + ' ページ）'}"></p>
                               <p th:unless="${housePage.getTotalPages() > 1}" class="fs-5 mb-3" th:text="${'検索結果：' + housePage.getTotalElements() + '件'}"></p>
@@ -160,7 +165,7 @@
                           </div>
 
                           <div class="mb-3" th:each="house : ${housePage}">
-                              <a href="#" class="link-dark samuraitravel-card-link">
+                              <a href="@{/houses/__${house.id}__}" class="link-dark samuraitravel-card-link">
                                   <div class="card h-100">
                                       <div class="row g-0">
                                           <div class="col-md-4">

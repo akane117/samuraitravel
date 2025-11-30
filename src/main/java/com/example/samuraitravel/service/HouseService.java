@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -90,6 +91,11 @@ public class HouseService {
 	//idが最も大きい民宿を取得する
 	public House findFirstHouseByOrderByIdDesc() {
 		return houseRepository.findFirstByOrderByIdDesc();
+	}
+	
+	//作成日時が新しい順に10件の民宿を取得する
+	public List<House> findTop10HousesByOrderByCreatedAtDesc(){
+		return houseRepository.findTop10ByOrderByCreatedAtDesc();
 	}
 	
 	  @Transactional
